@@ -40,7 +40,7 @@ public class DuplicatesInArray
         boolean[] rr=new boolean[ar.length];
         for(int i=0;i<ar.length;i++)
         {
-            if(rr[i]==false)
+            if(!rr[i])
             {
                 int count = 0;
                 for (int j = 0; j < ar.length; j++)
