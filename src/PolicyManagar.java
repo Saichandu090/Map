@@ -85,18 +85,12 @@ public class PolicyManagar
     {
         LocalDate today=LocalDate.now();
         Set<Policy> keys=map2.keySet();
-        Policy sa=null;
-        for(Policy p : keys)
+        Iterator<Policy> itr=keys.iterator();
+        while(itr.hasNext())
         {
-            List<Policy> dd=map2.get(p);
-            for(Policy l:dd)
-            {
-                if(l.getExpiryDate().isBefore(today))
-                {
-                    sa=l;
-                }
-            }
-            map2.remove(sa);
+            Policy ls=itr.next();
+            if(ls.getExpiryDate().isBefore(today))
+                itr.remove();
         }
     }
 
